@@ -3,6 +3,7 @@ Script allowing to update npm package in package.json and create pull request iw
 
 # Example usage
 
+Remember to create .evn based on .env.dist with all envs filled
 
 `node src/index.js updatePackage --name="bitbucket" --version="2.11.0" --repository="redocly-trial" --sourceBranch="updatePackageVersion"`
 
