@@ -1,6 +1,7 @@
 import { Command } from 'commander'
 import { cloneRepo, createPullRequest } from '../sourceControl/sourceControl.service.js';
 import updateFiles from '../file/file.service.js';
+import { inspect } from 'util';
 
 const program = new Command();
 
@@ -20,10 +21,10 @@ export function updatePackage() {
         const updatedFiles = await updateFiles(repository, name, version);
 
         await createPullRequest(repository, sourceBranch, name, updatedFiles);
-        console.log('updatedFiles', updatedFiles);
       });
+
       program.parse();
   } catch (err) {
-    console.log('wait', err)
+    console.log(inspect(err))
   }
 }

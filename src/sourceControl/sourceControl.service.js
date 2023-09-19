@@ -19,7 +19,7 @@ const push = async (repositoryName, branch) => {
   await simpleGit(getLocalRepoDirectory(repositoryName)).push('origin', branch);
 };
 
-const cloneRepo = async (repositoryName='redocly-trial', branch='default-pr-branch') => {
+const cloneRepo = async (repositoryName='redocly-trial', branch='default-branch') => {
   const repoRemotePath = `https://${process.env.USER_NAME}:${process.env.PASSWORD}@bitbucket.org/${process.env.REPO_WORKSPACE}/${repositoryName}.git`;
   const repoDir = getLocalRepoDirectory(repositoryName);
 

@@ -38,7 +38,7 @@ const getFilesLocations = (path, fileName = 'package.json') => {
         if (file === fileName) {
             files.push(filePath);
         }
-        // @TODO: add nested files search
+        // @TODO: create nested files search
     }
 
     return files;
